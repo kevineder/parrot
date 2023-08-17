@@ -13,12 +13,9 @@ android {
 }
 
 dependencies {
-//    implementation(platform(libs.kotlin.bom))
     implementation(libs.androidx.appcompat)
     implementation(libs.activity.ktx)
     implementation(libs.google.android.material)
-//    implementation(libs.compose.navigation)
-//    implementation(libs.compose.material3)
 
     // Features
     implementation(project(":features:main-screen"))
