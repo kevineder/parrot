@@ -1,4 +1,4 @@
-# Parrot
+# 🦜 Parrot
 
 Parrot is my toy project designed to explore multi-module Android configurations and eventually Android Media3.
 
