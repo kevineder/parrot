@@ -22,8 +22,3 @@ dependencies {
 
     androidTestImplementation(libs.espresso.core)
 }
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}

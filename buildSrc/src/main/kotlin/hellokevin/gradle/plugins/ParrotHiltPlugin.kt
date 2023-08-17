@@ -7,6 +7,8 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.accessors.runtime.addDependencyTo
 import org.gradle.kotlin.dsl.getByType
+import org.jetbrains.kotlin.gradle.plugin.KaptExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinPluginWrapper
 
 /**
  * A plugin for applying Hilt dependencies to a module.
@@ -30,5 +32,11 @@ class ParrotHiltPlugin : Plugin<Project> {
         project.dependencies.add("kapt", project.libs("hilt.compiler"))
         project.dependencies.add("implementation", project.libs("hilt.android"))
         project.dependencies.add("implementation", project.libs("javax.inject"))
+
+        project.plugins.withType(KotlinPluginWrapper::class.java) {
+            project.extensions.configure<KaptExtension>("kapt") {
+                correctErrorTypes = true
+            }
+        }
     }
 }
