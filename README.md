@@ -1,6 +1,6 @@
 # Parrot
 
-Parrot is a toy project designed to explore multi-module Android configurations and Android Media3. This project serves as a learning playground for experimenting with various Android architecture and features.
+Parrot is my toy project designed to explore multi-module Android configurations and eventually Android Media3.
 
 ## Table of Contents
 
