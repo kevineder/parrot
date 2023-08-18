@@ -1,6 +1,5 @@
 package hellokevin.gradle.plugins
 
-import com.android.build.api.variant.AndroidComponentsExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
