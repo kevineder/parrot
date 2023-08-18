@@ -23,7 +23,7 @@ import org.gradle.api.Project
  * in the project. Ensure that you have the required dependencies and version constants set up.
  *
  * Note: This plugin is meant to be part of a larger plugin-based setup. It automatically applies
- * the necessary common plugins like [ParrotBasePlugin], [ParrotComposePlugin], and [ParrotHiltPlugin].
+ * the necessary common plugins like [ParrotBasePlugin], [ParrotComposePlugin] and [ParrotAnvilPlugin].
  */
 class ParrotFeaturePlugin: Plugin<Project> {
     override fun apply(project: Project) {
@@ -32,7 +32,7 @@ class ParrotFeaturePlugin: Plugin<Project> {
             apply("org.jetbrains.kotlin.android")
             apply("parrot-base-plugin")
             apply("parrot-compose-plugin")
-            apply("parrot-hilt-plugin")
+            apply("parrot-anvil-plugin")
         }
     }
 }

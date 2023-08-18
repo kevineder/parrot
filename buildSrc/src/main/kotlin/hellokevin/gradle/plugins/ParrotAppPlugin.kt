@@ -27,7 +27,7 @@ class ParrotAppPlugin : Plugin<Project> {
             apply("com.android.application")
             apply("org.jetbrains.kotlin.android")
             apply("parrot-base-plugin")
-            apply("parrot-hilt-plugin")
+            apply("parrot-anvil-plugin")
         }
 
         val appComponents =

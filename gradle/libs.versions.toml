@@ -1,5 +1,7 @@
 [versions]
 activity-ktx = "1.7.2"
+anvil = "2.4.7"
+agp = "8.0.2"
 appcompat = "1.4.1"
 constraint-layout = "2.1.4"
 coroutines = "1.7.2"
@@ -13,6 +15,7 @@ hilt = "2.44"
 javax-inject = "1"
 junit = "1.1.5"
 kotlin = "1.7.20"
+kgp = "1.9.0"
 lifecycle = "2.6.1"
 material = "1.9.0"
 material3 = "1.1.1"
@@ -22,6 +25,7 @@ retrofit = "2.9.0"
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "kotlin" }
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = 'activity-ktx' }
+agp = { group = 'com.android.tools.build', name = 'gradle', version.ref = 'agp'}
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
@@ -40,8 +44,13 @@ javax-inject = { group = "javax.inject", name = "javax.inject", version.ref = "j
 moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
 kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
 junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
+kgp = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kgp" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit"}
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+anvil = { id = "com.squareup.anvil", version.ref = "anvil" }
 jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

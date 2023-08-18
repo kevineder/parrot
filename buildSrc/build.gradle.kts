@@ -1,11 +1,11 @@
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.kotlin.android") version "1.8.20" apply false
+    alias(libs.plugins.kotlin.android) apply false
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:8.0.2")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
+    implementation(libs.agp)
+    implementation(libs.kgp)
 }
 
 gradlePlugin {
@@ -33,6 +33,11 @@ gradlePlugin {
         register("parrot-hilt-plugin") {
             id = "parrot-hilt-plugin"
             implementationClass = "hellokevin.gradle.plugins.ParrotHiltPlugin"
+        }
+
+        register("parrot-anvil-plugin") {
+            id = "parrot-anvil-plugin"
+            implementationClass = "hellokevin.gradle.plugins.ParrotAnvilPlugin"
         }
     }
 }
