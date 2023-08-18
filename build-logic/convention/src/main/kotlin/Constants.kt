@@ -1,5 +1,3 @@
-package hellokevin.gradle.plugins
-
 class ParrotJavaVersions {
     companion object {
         internal const val JAVA_VERSION_STRING = "1.8"
