@@ -29,7 +29,6 @@ class ParrotFeaturePlugin: Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.run {
             apply("com.android.library")
-            apply("org.jetbrains.kotlin.android")
             apply("parrot-base-plugin")
             apply("parrot-compose-plugin")
             apply("parrot-anvil-plugin")

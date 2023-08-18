@@ -37,8 +37,6 @@ class ParrotBasePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.run {
             apply("org.jetbrains.kotlin.android")
-            apply("kotlin-kapt")
-            apply("parrot-compose-plugin")
         }
 
         val androidComponents = project.extensions.getByType(AndroidComponentsExtension::class.java)
@@ -75,12 +73,14 @@ class ParrotBasePlugin : Plugin<Project> {
                     sourceCompatibility = JavaVersion.VERSION_1_8
                     targetCompatibility = JavaVersion.VERSION_1_8
                 }
+
                 project.tasks.withType(KotlinCompile::class.java).configureEach {
                     kotlinOptions {
                         apiVersion = ParrotJavaVersions.JAVA_VERSION_STRING
                         languageVersion = ParrotJavaVersions.JAVA_VERSION_STRING
                     }
                 }
+
                 project.tasks.withType(KotlinJvmCompile::class.java).configureEach {
                     kotlinOptions.jvmTarget = ParrotJavaVersions.JAVA_VERSION_STRING
                 }

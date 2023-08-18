@@ -39,6 +39,11 @@ gradlePlugin {
             id = "parrot-anvil-plugin"
             implementationClass = "hellokevin.gradle.plugins.ParrotAnvilPlugin"
         }
+
+        register("parrot-library-plugin") {
+            id = "parrot-library-plugin"
+            implementationClass = "hellokevin.gradle.plugins.ParrotLibraryPlugin"
+        }
     }
 }
 
