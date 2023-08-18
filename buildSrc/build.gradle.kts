@@ -10,19 +10,19 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("parrot-base-plugin") {
-            id = "parrot-base-plugin"
-            implementationClass = "hellokevin.gradle.plugins.ParrotBasePlugin"
+        register("parrot-android-base-plugin") {
+            id = "parrot-android-base-plugin"
+            implementationClass = "hellokevin.gradle.plugins.ParrotAndroidBasePlugin"
         }
 
-        register("parrot-app-plugin") {
-            id = "parrot-app-plugin"
-            implementationClass = "hellokevin.gradle.plugins.ParrotAppPlugin"
+        register("parrot-android-app-plugin") {
+            id = "parrot-android-app-plugin"
+            implementationClass = "hellokevin.gradle.plugins.ParrotAndroidAppPlugin"
         }
 
-        register("parrot-feature-plugin") {
-            id = "parrot-feature-plugin"
-            implementationClass = "hellokevin.gradle.plugins.ParrotFeaturePlugin"
+        register("parrot-android-feature-plugin") {
+            id = "parrot-android-feature-plugin"
+            implementationClass = "hellokevin.gradle.plugins.ParrotAndroidFeaturePlugin"
         }
 
         register("parrot-compose-plugin") {
@@ -40,9 +40,9 @@ gradlePlugin {
             implementationClass = "hellokevin.gradle.plugins.ParrotAnvilPlugin"
         }
 
-        register("parrot-library-plugin") {
-            id = "parrot-library-plugin"
-            implementationClass = "hellokevin.gradle.plugins.ParrotLibraryPlugin"
+        register("parrot-android-library-plugin") {
+            id = "parrot-android-library-plugin"
+            implementationClass = "hellokevin.gradle.plugins.ParrotAndroidLibraryPlugin"
         }
     }
 }

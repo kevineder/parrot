@@ -1,7 +1,6 @@
 package hellokevin.gradle.plugins
 
 import com.android.build.api.variant.AndroidComponentsExtension
-import com.android.build.gradle.AppExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -19,7 +18,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
  * Apply this plugin to an Android project's build.gradle.kts file to apply the common
  * configuration to all Android modules:
  *
- * apply("parrot-base-plugin")
+ * apply("parrot-android-base-plugin")
  *
  * The simple name is defined in "buildSrc/build.gradle.kts".
  *
@@ -31,9 +30,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
  * Make sure to have the necessary dependencies and version constants defined.
  *
  * Note: This plugin is meant to be used as a part of a larger plugin-based setup.
- * Individual module-specific plugins like [ParrotAppPlugin] apply this automatically.
+ * Individual module-specific plugins like [ParrotAndroidAppPlugin] apply this automatically.
  */
-class ParrotBasePlugin : Plugin<Project> {
+class ParrotAndroidBasePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.run {
             apply("org.jetbrains.kotlin.android")
@@ -52,20 +51,6 @@ class ParrotBasePlugin : Plugin<Project> {
                 packaging {
                     resources {
                         excludes += "/META-INF/{AL2.0,LGPL2.1}"
-                    }
-                }
-
-                if (this is AppExtension) {
-                    buildTypes {
-                        maybeCreate("release")
-                        getByName("release").run {
-                            isMinifyEnabled = true
-                            isShrinkResources = true
-                            proguardFiles(
-                                extension.getDefaultProguardFile("proguard-android-optimize.txt"),
-                                "proguard-rules.pro"
-                            )
-                        }
                     }
                 }
 

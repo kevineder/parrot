@@ -1,5 +1,5 @@
 plugins {
-    id("parrot-app-plugin")
+    id("parrot-android-app-plugin")
 }
 
 android {

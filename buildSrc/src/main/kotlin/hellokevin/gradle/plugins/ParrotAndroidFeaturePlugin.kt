@@ -8,12 +8,12 @@ import org.gradle.api.Project
  *
  * This plugin is designed to be applied to Android feature modules in this project.
  * It configures the necessary settings and dependencies for feature modules, including
- * applying "com.android.library" and other common plugins like "org.jetbrains.kotlin.android".
+ * applying the [ParrotAndroidLibraryPlugin] and other common plugins like "org.jetbrains.kotlin.android".
  *
  * Usage:
  * Apply this plugin to an Android feature module's build.gradle.kts file:
  *
- * apply("parrot-feature-plugin")
+ * apply("parrot-android-feature-plugin")
  *
  * The simple name is defined in "buildSrc/build.gradle.kts".
  *
@@ -22,13 +22,12 @@ import org.gradle.api.Project
  * in the project. Ensure that you have the required dependencies and version constants set up.
  *
  * Note: This plugin is meant to be part of a larger plugin-based setup. It automatically applies
- * the necessary common plugins like [ParrotBasePlugin], [ParrotComposePlugin] and [ParrotAnvilPlugin].
+ * the necessary common plugins like [ParrotAndroidBasePlugin], [ParrotComposePlugin] and [ParrotAnvilPlugin].
  */
-class ParrotFeaturePlugin: Plugin<Project> {
+class ParrotAndroidFeaturePlugin: Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.run {
-            apply("com.android.library")
-            apply("parrot-base-plugin")
+            apply("parrot-android-library-plugin")
             apply("parrot-compose-plugin")
             apply("parrot-anvil-plugin")
         }

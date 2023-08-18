@@ -1,6 +1,7 @@
 package hellokevin.gradle.plugins
 
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
+import com.android.build.gradle.AppExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -14,18 +15,18 @@ import org.gradle.api.Project
  * Usage:
  * Apply this plugin to an "app" module's build.gradle.kts file to configure it for the Android application:
  *
- * apply("parrot-app-plugin")
+ * apply("parrot-android-app-plugin")
  *
  * The simple name is defined in "buildSrc/build.gradle.kts".
  *
  * Note: This plugin should be applied to the "app" module only.
  * If applied to other module types, unexpected behavior may occur.
  */
-class ParrotAppPlugin : Plugin<Project> {
+class ParrotAndroidAppPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.run {
             apply("com.android.application")
-            apply("parrot-base-plugin")
+            apply("parrot-android-base-plugin")
             apply("parrot-compose-plugin")
             apply("parrot-anvil-plugin")
         }
@@ -34,11 +35,30 @@ class ParrotAppPlugin : Plugin<Project> {
             project.extensions.getByType(ApplicationAndroidComponentsExtension::class.java)
 
         appComponents.finalizeDsl { extension ->
-            extension.defaultConfig {
-                targetSdk = ParrotJavaVersions.TARGET_SDK
+            with(extension) {
+                defaultConfig {
+                    targetSdk = ParrotJavaVersions.TARGET_SDK
+                }
+
+                if (this is AppExtension) {
+                    buildTypes {
+                        maybeCreate("release")
+                        getByName("release").run {
+                            isMinifyEnabled = true
+                            isShrinkResources = true
+                            proguardFiles(
+                                extension.getDefaultProguardFile("proguard-android-optimize.txt"),
+                                "proguard-rules.pro"
+                            )
+                        }
+                    }
+                }
             }
         }
 
-        project.dependencies.add("implementation", project.dependencies.platform(project.libs("kotlin.bom")))
+        project.dependencies.add(
+            "implementation",
+            project.dependencies.platform(project.libs("kotlin.bom"))
+        )
     }
 }

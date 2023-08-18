@@ -17,11 +17,11 @@ Parrot is a multi-module Android project that focuses on experimenting with diff
 
 The project leverages several custom plugins created in the `buildSrc` directory to streamline the development process. These plugins offer pre-configured settings and dependencies for different module types:
 
-- **ParrotBasePlugin**: This base plugin should be applied to all Android modules in the project. It configures common settings and dependencies, such as compileSdk, defaultConfig, packaging, build types, compile options, and Kotlin settings. It also applies other necessary plugins like "org.jetbrains.kotlin.android" and "kotlin-kapt."
+- **ParrotBaseAndroidPlugin**: This base plugin should be applied to all Android modules in the project. It configures common settings and dependencies, such as compileSdk, defaultConfig, packaging, build types, compile options, and Kotlin settings. It also applies other necessary plugins like "org.jetbrains.kotlin.android" and "kotlin-kapt."
 
-- **ParrotAppPlugin**: This plugin is specifically designed for applying to "app" modules. It automatically applies essential plugins like "com.android.application," "org.jetbrains.kotlin.android," "parrot-base-plugin," and "parrot-compose-plugin." It configures the targetSdk and applies common settings to the "app" module.
+- **ParrotAndroidAppPlugin**: This plugin is specifically designed for applying to "app" modules. It automatically applies essential plugins like "com.android.application," "org.jetbrains.kotlin.android," "parrot-android-base-plugin," and "parrot-compose-plugin." It configures the targetSdk and applies common settings to the "app" module.
  
-- **ParrotFeaturePlugin**: This plugin should be applied to Android feature modules. It applies the necessary plugins like "com.android.library," "org.jetbrains.kotlin.android," "parrot-base-plugin," and "parrot-compose-plugin."
+- **ParrotFeaturePlugin**: This plugin should be applied to Android feature modules. It applies the necessary plugins like "com.android.library," "org.jetbrains.kotlin.android," "parrot-android-base-plugin," and "parrot-compose-plugin."
  
 - **ParrotComposePlugin**: This plugin enables Jetpack Compose and configures related dependencies for Android modules. It handles settings related to Jetpack Compose, such as enabling build features and specifying the Kotlin compiler extension version.
 
