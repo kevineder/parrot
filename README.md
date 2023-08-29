@@ -15,7 +15,7 @@ Parrot is a multi-module Android project that focuses on experimenting with diff
 
 ## Plugins
 
-The project leverages several custom plugins created in the `buildSrc` directory to streamline the development process. These plugins offer pre-configured settings and dependencies for different module types:
+The project leverages several custom plugins created in the `build-logic` directory to streamline the development process. These plugins offer pre-configured settings and dependencies for different module types:
 
 - **ParrotBaseAndroidPlugin**: This base plugin should be applied to all Android modules in the project. It configures common settings and dependencies, such as compileSdk, defaultConfig, packaging, build types, compile options, and Kotlin settings. It also applies other necessary plugins like "org.jetbrains.kotlin.android" and "kotlin-kapt."
 
