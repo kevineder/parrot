@@ -26,7 +26,7 @@ The project leverages several custom plugins created in the `buildSrc` directory
 - **ParrotComposePlugin**: This plugin enables Jetpack Compose and configures related dependencies for Android modules. It handles settings related to Jetpack Compose, such as enabling build features and specifying the Kotlin compiler extension version.
 
 - **ParrotAnvilPlugin**: This plugin adds Anvil-related dependencies to the module where it's applied.
-- 
+ 
 - **ParrotHiltPlugin**: This plugin adds Hilt-related dependencies to the module where it's applied. It simplifies the process of adding Hilt's annotation processor and runtime dependencies.
 
 ## Dependency Management
